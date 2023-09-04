@@ -1,0 +1,28 @@
+[
+    {
+        "firstname":"Joe",
+        "link":"https://www.joerogan.com/",
+        "last":"Rogan",
+        "image":"./blank.jpeg"
+  
+        
+    },
+    {
+        "firstname":"Adam",
+        "link":"https://www.imdb.com/name/nm0001191/",
+        "last":"Sandler",
+        "image":"./blank.jpeg"
+
+
+
+    },
+    {
+        "firstname":"Dave",
+        "link":"https://shopchappelle.com/",
+        "last":"Chapelle",
+        "image":"./blank.jpeg"
+
+
+
+    }
+]

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>React Import External JSON</title>
+  <style>
+    .round{
+      border-radius: 50%;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin>
+  </script>
+
+  <script src="https://unpkg.com/@babel/standalone@7.22.10/babel.min.js"></script>
+</head>
+<body>
+  <h1>Funny Fellas!</h1>
+
+  <div id="myApp"></div>
+  <script type="text/babel">
+    "use strict";
+    function PersonCard(props) {
+      return (
+        <div>
+          <h2><a href={props.link}>{props.firstname} {props.last}</a></h2>
+          <img className="round" src={props.image} alt={`${props.firstname} ${props.last}`} width="200" />
+        </div>
+      );
+    }
+
+    $.getJSON(
+      'data.json',
+      function(jsonFromJquery) {
+        ReactDOM.render(
+          jsonFromJquery.map((person, index) => (
+            <PersonCard
+              key={index}
+              firstname={person.firstname}
+              link={person.link}
+              last={person.last}
+              image={person.image}
+            />
+          )),
+          document.getElementById('myApp')
+        );
+      }
+    );
+  </script>
+</body>
+</html>
